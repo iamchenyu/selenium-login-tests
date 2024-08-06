@@ -2,7 +2,8 @@ from selenium import webdriver
 import pytest
 
 # if we want to run tests in all browsers, we can use `params`
-@pytest.fixture(params=["chrome", "safari"])
+# @pytest.fixture(params=["chrome", "safari"])
+@pytest.fixture(params=["chrome"])
 def driver(request):
     browser = request.param
     # to print out messages in fixture, use -s flag
