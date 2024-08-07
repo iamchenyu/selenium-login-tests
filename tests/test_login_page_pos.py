@@ -5,9 +5,9 @@ from selenium.webdriver.common.by import By
 class TestPostiveScenarios:
     @pytest.mark.login
     @pytest.mark.positive
-    def test_positive_login(self, driver):
+    def test_positive_login(self, driver, open_login_page):
         # Go to webpage
-        driver.get("https://practicetestautomation.com/practice-test-login/")
+        # driver.get("https://practicetestautomation.com/practice-test-login/")
         # time.sleep(2)
 
         # Type username student into Username field

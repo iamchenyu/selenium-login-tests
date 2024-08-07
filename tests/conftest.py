@@ -45,9 +45,14 @@ def driver(request):
 #     print(f"end in driver fixture - {browser}")
 #     my_driver.quit()
 
-@pytest.fixture(autouse=True)
-def open_exception_tests_page(driver):
+@pytest.fixture
+def open_exception_page(driver):
     driver.get("https://practicetestautomation.com/practice-test-exceptions/")
+
+@pytest.fixture
+def open_login_page(driver):
+    driver.get("https://practicetestautomation.com/practice-test-login/")
+
 
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome", help="browser option: chrome or safari")
