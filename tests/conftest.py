@@ -16,9 +16,11 @@ def driver(request):
         my_driver = webdriver.Chrome(options=options)
     elif browser == "safari":
         # --browser=safari
-        my_driver = webdriver.Safari()
+        my_driver = webdriver.Safari()      
     else:
         raise TypeError(f"Browser can only be chrome or safari, but got {browser}")
+    # implictly wait
+    # my_driver.implicitly_wait(5)
     yield my_driver
     print(f"end in driver fixture - {browser}")
     my_driver.quit()
@@ -42,6 +44,10 @@ def driver(request):
 #     yield my_driver
 #     print(f"end in driver fixture - {browser}")
 #     my_driver.quit()
+
+@pytest.fixture(autouse=True)
+def open_exception_tests_page(driver):
+    driver.get("https://practicetestautomation.com/practice-test-exceptions/")
 
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome", help="browser option: chrome or safari")
