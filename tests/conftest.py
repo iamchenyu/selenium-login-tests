@@ -45,13 +45,14 @@ def driver(request):
 #     print(f"end in driver fixture - {browser}")
 #     my_driver.quit()
 
-@pytest.fixture
-def open_exception_page(driver):
-    driver.get("https://practicetestautomation.com/practice-test-exceptions/")
+# we switch to page object model to achieve this
+# @pytest.fixture
+# def open_exception_page(driver):
+#     driver.get("https://practicetestautomation.com/practice-test-exceptions/")
 
-@pytest.fixture
-def open_login_page(driver):
-    driver.get("https://practicetestautomation.com/practice-test-login/")
+# @pytest.fixture
+# def open_login_page(driver):
+#     driver.get("https://practicetestautomation.com/practice-test-login/")
 
 
 def pytest_addoption(parser):
